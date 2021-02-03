@@ -32,7 +32,7 @@ exports.start_row_bubble_sort = (
   /* start sorting list one round at a time
      each next round stops one before previous
   */
-  let { sorted_bubble_list, next_index_to_stop_at } = this.row_bubble_sort(
+  let [sorted_bubble_list, next_index_to_stop_at] = this.row_bubble_sort(
     list_to_sort,
     index_to_check,
     index_to_compare_to,
@@ -61,10 +61,7 @@ exports.row_bubble_sort = (
   /*  if we are done bubbling up this round, return partially sorted list
       and index it stopped checking at */
   if (index_to_compare_to == stop_index) {
-    return {
-      sorted_bubble_list: list_to_sort.concat([]),
-      next_index_to_stop_at: stop_index - 1,
-    };
+    return [list_to_sort.concat([]), stop_index - 1];
   } else {
     /* get index of next two elements to check */
     let next_index_to_check = index_to_check + 1;
@@ -161,12 +158,12 @@ exports.start_pair_bubble_sort = (
      each next pair starts at the end of last
      pair check
   */
-  let {
+  let [
     sorted_bubble_list,
     next_index_to_compare_to,
     next_index_to_check,
     index_to_fully_stop_at,
-  } = this.non_mututate_swap(
+  ] = this.non_mututate_swap(
     list_to_sort,
     index_to_check,
     index_to_compare_to,
@@ -229,19 +226,19 @@ exports.non_mututate_swap = (
       .concat(word_to_swap_forward)
       .concat(list_after_index_to_swap_backward);
 
-    return {
-      sorted_bubble_list: new_list_one_swap,
-      next_index_to_check: index_to_compare_to,
-      next_index_to_compare_to: index_to_compare_to + 1,
-      index_to_fully_stop_at: stop_index,
-    };
+    return [
+      new_list_one_swap.concat([]),
+      index_to_compare_to,
+      index_to_compare_to + 1,
+      stop_index,
+    ];
   } else {
-    return {
-      sorted_bubble_list: list_to_sort,
-      next_index_to_check: index_to_compare_to,
-      next_index_to_compare_to: index_to_compare_to + 1,
-      index_to_fully_stop_at: stop_index,
-    };
+    return [
+      list_to_sort.concat([]),
+      index_to_compare_to,
+      index_to_compare_to + 1,
+      stop_index,
+    ];
   }
 };
 

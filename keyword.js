@@ -19,6 +19,20 @@ function main() {
     /* recursively sort list */
     let sorted_merged_list = merge_sort(parsed_list_3);
 
+    console.log("full list: ", parsed_list);
+    console.log("full list length: ", parsed_list.length);
+
+    console.log("Merge Sorted : ", sorted_merged_list);
+    console.log("Merge Sorted Length : ", sorted_merged_list.length);
+
+    /* Test with sorted array by JS */
+    let sorted_js = parsed_list.sort();
+    console.log("Sorted by JS: ", sorted_js);
+    console.log("Sorted by JS length: ", sorted_js.length);
+    let check = sorted_js.filter((n) => !sorted_merged_list.includes(n));
+    console.log("Difference = : ", check);
+    console.log("Same ? ", check.length == 0, "\n");
+
     /* break merged into smaller lists to reduce */
 
     let reduced_list = start_reducing_list(sorted_merged_list);
@@ -28,39 +42,25 @@ function main() {
       total_words_reduced += reduced_list[index][0];
     }
 
-    console.log("full list: ", parsed_list);
-    console.log("full list length: ", parsed_list.length);
-
-    console.log("Merge Sorted : ", sorted_merged_list);
-    console.log("Merge Sorted Length : ", sorted_merged_list.length);
-
     console.log("Reduced List", reduced_list);
     console.log("Reduced List total worlds", total_words_reduced);
 
-    /* Test with sorted array by JS */
-    // let sorted_js = parsed_list.sort();
-    // console.log("Sorted by JS: ", sorted_js);
-    // let check = sorted_js.filter((n) => !sorted_merged_list.includes(n));
-    // console.log("Difference = : ", check);
-    // console.log("Same ? ", check.length == 0, "\n");
-
     let total = 0;
-    let array_of_words_sorted = [];
+    let array_of_words_reduced = [];
     for (let i = 0; i < sorted_merged_list.length; i++) {
       total++;
       if (sorted_merged_list[i] != sorted_merged_list[i + 1]) {
-        array_of_words_sorted.push([total, sorted_merged_list[i]]);
+        array_of_words_reduced.push([total, sorted_merged_list[i]]);
         total = 0;
       }
     }
-
     let total_words = 0;
-    for (let index = 0; index < array_of_words_sorted.length; index++) {
-      total_words += array_of_words_sorted[index][0];
+    for (let index = 0; index < array_of_words_reduced.length; index++) {
+      total_words += array_of_words_reduced[index][0];
     }
 
-    console.log("Array of Words Sorted : ", array_of_words_sorted);
-    console.log("Total Words Sorted : ", total_words);
+    console.log("JS reduced list : ", array_of_words_reduced);
+    console.log("Total Words JS reduce list : ", total_words);
 
     /* recursively search for k frequent most frequent words  */
     search_list(parsed_list, 0, k_frequent_words);
