@@ -1,7 +1,7 @@
+const { count } = require("console");
 const fs = require("fs");
 
-const { merge_sort } = require("./sort");
-const { start_reducing_list } = require("./reduce");
+const { merge_sort } = require("../sort");
 function search_list(list_to_search, list_index, k_frequent_words) {}
 
 function main() {
@@ -20,8 +20,60 @@ function main() {
     let sorted_merged_list = merge_sort(parsed_list_3);
 
     /* break merged into smaller lists to reduce */
+    let quarter_length = sorted_merged_list.length / 4;
+    let first_quarter = sorted_merged_list.slice(0, quarter_length);
+    let second_quarter = sorted_merged_list.slice(
+      quarter_length,
+      quarter_length * 2
+    );
+    let third_quarter = sorted_merged_list.slice(
+      quarter_length * 2,
+      quarter_length * 3
+    );
+    let fourth_quarter = sorted_merged_list.slice(
+      quarter_length * 3,
+      sorted_merged_list.length
+    );
 
-    let reduced_list = start_reducing_list(sorted_merged_list);
+    let reduced_list_first = start_reduce_list(
+      first_quarter,
+      [],
+      0,
+      0,
+      first_quarter.length
+    );
+    let reduced_list_second = start_reduce_list(
+      second_quarter,
+      [],
+      0,
+      0,
+      second_quarter.length
+    );
+    let reduced_list_third = start_reduce_list(
+      third_quarter,
+      [],
+      0,
+      0,
+      third_quarter.length
+    );
+    let reduced_list_fourth = start_reduce_list(
+      fourth_quarter,
+      [],
+      0,
+      0,
+      fourth_quarter.length
+    );
+    // let reduced_list = reduce_list(
+    //   sorted_merged_list,
+    //   [],
+    //   0,
+    //   0,
+    //   sorted_merged_list.length
+    // );
+    let reduced_list = reduced_list_first
+      .concat(reduced_list_second)
+      .concat(reduced_list_third)
+      .concat(reduced_list_fourth);
 
     let total_words_reduced = 0;
     for (let index = 0; index < reduced_list.length; index++) {
@@ -66,6 +118,62 @@ function main() {
     search_list(parsed_list, 0, k_frequent_words);
   } catch (err) {
     console.error(err);
+  }
+}
+
+function start_reduce_list(
+  sorted_list,
+  sorted_list_to_reduce,
+  current_word,
+  total_count_of_words,
+  length_list
+) {
+  let next_word = current_word + 1;
+  let new_total = total_count_of_words + 1;
+
+  let { reduced_list, word_total } = reduce_list(
+    sorted_list,
+    sorted_list_to_reduce,
+    current_word,
+    next_word,
+    new_total
+  );
+
+  if (next_word == length_list) {
+    return reduced_list;
+  } else {
+    console.log(reduced_list);
+    return start_reduce_list(
+      sorted_list,
+      reduced_list,
+      next_word,
+      word_total,
+      length_list
+    );
+  }
+}
+
+function reduce_list(
+  sorted_list,
+  reduced_list,
+  current_word,
+  next_word,
+  total_count_of_words
+) {
+  if (sorted_list[current_word] != sorted_list[next_word]) {
+    let new_reduced_list = [
+      ...reduced_list,
+      [total_count_of_words, sorted_list[current_word]],
+    ];
+    return {
+      reduced_list: new_reduced_list,
+      word_total: 0,
+    };
+  } else {
+    return {
+      reduced_list: reduced_list,
+      word_total: total_count_of_words,
+    };
   }
 }
 

@@ -2,7 +2,7 @@
   ** maximum stack size is reached for approx. 4000+ words
   ** algorithm NOT used for submission
   ** time = O(n2)
-  
+
   - BUBBLESORT:
     - checks the whole array round by round until sorted
     - each next check it stops index one before previous
@@ -32,7 +32,7 @@ exports.start_row_bubble_sort = (
   /* start sorting list one round at a time
      each next round stops one before previous
   */
-  let { sorted_bubble_list, next_index_to_stop_at } = this.bubble_sort(
+  let { sorted_bubble_list, next_index_to_stop_at } = this.row_bubble_sort(
     list_to_sort,
     index_to_check,
     index_to_compare_to,
@@ -43,7 +43,7 @@ exports.start_row_bubble_sort = (
     return sorted_bubble_list.concat([]);
   } else {
     /* else start new round stopping one before last stoppped index */
-    return this.start_bubble_sort(
+    return this.start_row_bubble_sort(
       sorted_bubble_list,
       0,
       1,
@@ -52,7 +52,7 @@ exports.start_row_bubble_sort = (
   }
 };
 
-exports.bubble_sort = (
+exports.row_bubble_sort = (
   list_to_sort,
   index_to_check,
   index_to_compare_to,
@@ -94,7 +94,7 @@ exports.bubble_sort = (
         .concat(list_after_index_to_swap_backward);
 
       /* use new "swapped" list and check next two elements */
-      return this.bubble_sort(
+      return this.row_bubble_sort(
         new_list_one_swap,
         next_index_to_check,
         next_index_to_compare_to,
@@ -102,7 +102,7 @@ exports.bubble_sort = (
       );
     } else {
       /* no swapping was done check next two elements  */
-      return this.bubble_sort(
+      return this.row_bubble_sort(
         list_to_sort,
         next_index_to_check,
         next_index_to_compare_to,
@@ -166,7 +166,7 @@ exports.start_pair_bubble_sort = (
     next_index_to_compare_to,
     next_index_to_check,
     index_to_fully_stop_at,
-  } = this.non_mututate_(
+  } = this.non_mututate_swap(
     list_to_sort,
     index_to_check,
     index_to_compare_to,
@@ -182,7 +182,7 @@ exports.start_pair_bubble_sort = (
       start new round stopping one before last stoppped index
      */
     if (next_index_to_compare_to == index_to_fully_stop_at) {
-      return this.start_bubble_sort(
+      return this.start_pair_bubble_sort(
         sorted_bubble_list,
         0,
         1,
@@ -190,7 +190,7 @@ exports.start_pair_bubble_sort = (
       );
     } else {
       /* continue this round with next two elements */
-      return this.start_bubble_sort(
+      return this.start_pair_bubble_sort(
         sorted_bubble_list,
         next_index_to_check,
         next_index_to_compare_to,
@@ -282,9 +282,12 @@ exports.merge_sort = (list_to_sort) => {
     /* recursively break down left and right list to one element */
     let split_left_list = this.merge_sort(left_list);
     let split_right_list = this.merge_sort(right_list);
-
+    // console.log(split_left_list);
+    // console.log(split_right_list);
     /* merge left and right lists */
     let partial_merged = this.merge([], split_left_list, split_right_list);
+    // console.log(partial_merged);
+
     return partial_merged;
   }
 };
@@ -292,7 +295,7 @@ exports.merge_sort = (list_to_sort) => {
 exports.merge = (merging_list, left_list, right_list) => {
   /* if both lists empty then return fully merged list */
   if (!left_list.length && !right_list.length) {
-    return merging_list;
+    return [].concat(merging_list);
   } else if (!left_list.length && right_list.length) {
     /* if left list is empty but right isnt, add right list onto merged list  */
     return merging_list.concat(right_list);
