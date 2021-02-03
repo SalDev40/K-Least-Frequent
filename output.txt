@@ -1,0 +1,905 @@
+full list:  [
+  'This',    'is',      'a',           'sim24ple',   'file',
+  'This',    'is',      'for',         'testing',    'a',
+  'simple',  'program', 'Test',        'this',       'file',
+  'only',    'file',    'apple',       'for',        'the',
+  'program', 'and',     'make',        'sure',       'to',
+  'use',     'only',    'this',        'functional', 'file',
+  'apple',   'CIS',     'programming', 'style',      'Program',
+  'lol',     'to',      'do',          'word',       'program',
+  'This',    'is',      'a',           'sim24ple',   'file',
+  'This',    'is',      'for',         'testing',    'a',
+  'simple',  'program', 'Test',        'this',       'file',
+  'only',    'file',    'apple',       'for',        'the',
+  'program', 'and',     'make',        'sure',       'to',
+  'use',     'only',    'this',        'functional', 'file',
+  'apple',   'CIS',     'programming', 'style',      'Program',
+  'lol',     'to',      'do',          'word',       'program'
+]
+length:  80
+left list:  [
+  'This',     'is',         'a',
+  'sim24ple', 'file',       'This',
+  'is',       'for',        'testing',
+  'a',        'simple',     'program',
+  'Test',     'this',       'file',
+  'only',     'file',       'apple',
+  'for',      'the',        'program',
+  'and',      'make',       'sure',
+  'to',       'use',        'only',
+  'this',     'functional', 'file',
+  'apple',    'CIS',        'programming',
+  'style',    'Program',    'lol',
+  'to',       'do',         'word',
+  'program'
+]
+right list:  [
+  'This',     'is',         'a',
+  'sim24ple', 'file',       'This',
+  'is',       'for',        'testing',
+  'a',        'simple',     'program',
+  'Test',     'this',       'file',
+  'only',     'file',       'apple',
+  'for',      'the',        'program',
+  'and',      'make',       'sure',
+  'to',       'use',        'only',
+  'this',     'functional', 'file',
+  'apple',    'CIS',        'programming',
+  'style',    'Program',    'lol',
+  'to',       'do',         'word',
+  'program'
+]
+left list:  [
+  'This',     'is',     'a',
+  'sim24ple', 'file',   'This',
+  'is',       'for',    'testing',
+  'a',        'simple', 'program',
+  'Test',     'this',   'file',
+  'only',     'file',   'apple',
+  'for',      'the'
+]
+right list:  [
+  'program',     'and',
+  'make',        'sure',
+  'to',          'use',
+  'only',        'this',
+  'functional',  'file',
+  'apple',       'CIS',
+  'programming', 'style',
+  'Program',     'lol',
+  'to',          'do',
+  'word',        'program'
+]
+left list:  [
+  'This',    'is',
+  'a',       'sim24ple',
+  'file',    'This',
+  'is',      'for',
+  'testing', 'a'
+]
+right list:  [
+  'simple', 'program',
+  'Test',   'this',
+  'file',   'only',
+  'file',   'apple',
+  'for',    'the'
+]
+left list:  [ 'This', 'is', 'a', 'sim24ple', 'file' ]
+right list:  [ 'This', 'is', 'for', 'testing', 'a' ]
+left list:  [ 'This', 'is' ]
+right list:  [ 'a', 'sim24ple', 'file' ]
+left list:  [ 'This' ]
+right list:  [ 'is' ]
+
+merging ... [ 'This' ] [ 'is' ]
+
+partial merge:  [ 'This', 'is' ]
+left list:  [ 'a' ]
+right list:  [ 'sim24ple', 'file' ]
+left list:  [ 'sim24ple' ]
+right list:  [ 'file' ]
+
+merging ... [ 'sim24ple' ] [ 'file' ]
+
+partial merge:  [ 'sim24ple', 'sim24ple' ]
+
+merging ... [ 'a' ] [ 'sim24ple', 'sim24ple' ]
+
+partial merge:  [ 'a', 'sim24ple', 'sim24ple' ]
+
+merging ... [ 'This', 'is' ] [ 'a', 'sim24ple', 'sim24ple' ]
+
+partial merge:  [ 'This', 'is', 'is', 'sim24ple', 'sim24ple' ]
+left list:  [ 'This', 'is' ]
+right list:  [ 'for', 'testing', 'a' ]
+left list:  [ 'This' ]
+right list:  [ 'is' ]
+
+merging ... [ 'This' ] [ 'is' ]
+
+partial merge:  [ 'This', 'is' ]
+left list:  [ 'for' ]
+right list:  [ 'testing', 'a' ]
+left list:  [ 'testing' ]
+right list:  [ 'a' ]
+
+merging ... [ 'testing' ] [ 'a' ]
+
+partial merge:  [ 'testing', 'testing' ]
+
+merging ... [ 'for' ] [ 'testing', 'testing' ]
+
+partial merge:  [ 'for', 'testing', 'testing' ]
+
+merging ... [ 'This', 'is' ] [ 'for', 'testing', 'testing' ]
+
+partial merge:  [ 'This', 'is', 'is', 'testing', 'testing' ]
+
+merging ... [ 'This', 'is', 'is', 'sim24ple', 'sim24ple' ] [ 'This', 'is', 'is', 'testing', 'testing' ]
+
+partial merge:  [
+  'This',     'This',
+  'is',       'is',
+  'is',       'is',
+  'sim24ple', 'sim24ple',
+  'testing',  'testing'
+]
+left list:  [ 'simple', 'program', 'Test', 'this', 'file' ]
+right list:  [ 'only', 'file', 'apple', 'for', 'the' ]
+left list:  [ 'simple', 'program' ]
+right list:  [ 'Test', 'this', 'file' ]
+left list:  [ 'simple' ]
+right list:  [ 'program' ]
+
+merging ... [ 'simple' ] [ 'program' ]
+
+partial merge:  [ 'simple', 'simple' ]
+left list:  [ 'Test' ]
+right list:  [ 'this', 'file' ]
+left list:  [ 'this' ]
+right list:  [ 'file' ]
+
+merging ... [ 'this' ] [ 'file' ]
+
+partial merge:  [ 'this', 'this' ]
+
+merging ... [ 'Test' ] [ 'this', 'this' ]
+
+partial merge:  [ 'Test', 'this', 'this' ]
+
+merging ... [ 'simple', 'simple' ] [ 'Test', 'this', 'this' ]
+
+partial merge:  [ 'simple', 'simple', 'simple', 'this', 'this' ]
+left list:  [ 'only', 'file' ]
+right list:  [ 'apple', 'for', 'the' ]
+left list:  [ 'only' ]
+right list:  [ 'file' ]
+
+merging ... [ 'only' ] [ 'file' ]
+
+partial merge:  [ 'only', 'only' ]
+left list:  [ 'apple' ]
+right list:  [ 'for', 'the' ]
+left list:  [ 'for' ]
+right list:  [ 'the' ]
+
+merging ... [ 'for' ] [ 'the' ]
+
+partial merge:  [ 'for', 'the' ]
+
+merging ... [ 'apple' ] [ 'for', 'the' ]
+
+partial merge:  [ 'apple', 'for', 'the' ]
+
+merging ... [ 'only', 'only' ] [ 'apple', 'for', 'the' ]
+
+partial merge:  [ 'only', 'only', 'only', 'only', 'the' ]
+
+merging ... [ 'simple', 'simple', 'simple', 'this', 'this' ] [ 'only', 'only', 'only', 'only', 'the' ]
+
+partial merge:  [
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'this',
+  'this',   'this'
+]
+
+merging ... [
+  'This',     'This',
+  'is',       'is',
+  'is',       'is',
+  'sim24ple', 'sim24ple',
+  'testing',  'testing'
+] [
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'this',
+  'this',   'this'
+]
+
+partial merge:  [
+  'This',     'This',     'is',
+  'is',       'is',       'is',
+  'sim24ple', 'sim24ple', 'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'this',
+  'this',     'this'
+]
+left list:  [
+  'program',    'and',
+  'make',       'sure',
+  'to',         'use',
+  'only',       'this',
+  'functional', 'file'
+]
+right list:  [
+  'apple',       'CIS',
+  'programming', 'style',
+  'Program',     'lol',
+  'to',          'do',
+  'word',        'program'
+]
+left list:  [ 'program', 'and', 'make', 'sure', 'to' ]
+right list:  [ 'use', 'only', 'this', 'functional', 'file' ]
+left list:  [ 'program', 'and' ]
+right list:  [ 'make', 'sure', 'to' ]
+left list:  [ 'program' ]
+right list:  [ 'and' ]
+
+merging ... [ 'program' ] [ 'and' ]
+
+partial merge:  [ 'program', 'program' ]
+left list:  [ 'make' ]
+right list:  [ 'sure', 'to' ]
+left list:  [ 'sure' ]
+right list:  [ 'to' ]
+
+merging ... [ 'sure' ] [ 'to' ]
+
+partial merge:  [ 'sure', 'to' ]
+
+merging ... [ 'make' ] [ 'sure', 'to' ]
+
+partial merge:  [ 'make', 'sure', 'to' ]
+
+merging ... [ 'program', 'program' ] [ 'make', 'sure', 'to' ]
+
+partial merge:  [ 'program', 'program', 'program', 'sure', 'to' ]
+left list:  [ 'use', 'only' ]
+right list:  [ 'this', 'functional', 'file' ]
+left list:  [ 'use' ]
+right list:  [ 'only' ]
+
+merging ... [ 'use' ] [ 'only' ]
+
+partial merge:  [ 'use', 'use' ]
+left list:  [ 'this' ]
+right list:  [ 'functional', 'file' ]
+left list:  [ 'functional' ]
+right list:  [ 'file' ]
+
+merging ... [ 'functional' ] [ 'file' ]
+
+partial merge:  [ 'functional', 'functional' ]
+
+merging ... [ 'this' ] [ 'functional', 'functional' ]
+
+partial merge:  [ 'this', 'this', 'this' ]
+
+merging ... [ 'use', 'use' ] [ 'this', 'this', 'this' ]
+
+partial merge:  [ 'use', 'use', 'use', 'use', 'use' ]
+
+merging ... [ 'program', 'program', 'program', 'sure', 'to' ] [ 'use', 'use', 'use', 'use', 'use' ]
+
+partial merge:  [
+  'program', 'program',
+  'program', 'sure',
+  'to',      'use',
+  'use',     'use',
+  'use',     'use'
+]
+left list:  [ 'apple', 'CIS', 'programming', 'style', 'Program' ]
+right list:  [ 'lol', 'to', 'do', 'word', 'program' ]
+left list:  [ 'apple', 'CIS' ]
+right list:  [ 'programming', 'style', 'Program' ]
+left list:  [ 'apple' ]
+right list:  [ 'CIS' ]
+
+merging ... [ 'apple' ] [ 'CIS' ]
+
+partial merge:  [ 'apple', 'apple' ]
+left list:  [ 'programming' ]
+right list:  [ 'style', 'Program' ]
+left list:  [ 'style' ]
+right list:  [ 'Program' ]
+
+merging ... [ 'style' ] [ 'Program' ]
+
+partial merge:  [ 'style', 'style' ]
+
+merging ... [ 'programming' ] [ 'style', 'style' ]
+
+partial merge:  [ 'programming', 'style', 'style' ]
+
+merging ... [ 'apple', 'apple' ] [ 'programming', 'style', 'style' ]
+
+partial merge:  [ 'apple', 'apple', 'programming', 'style', 'style' ]
+left list:  [ 'lol', 'to' ]
+right list:  [ 'do', 'word', 'program' ]
+left list:  [ 'lol' ]
+right list:  [ 'to' ]
+
+merging ... [ 'lol' ] [ 'to' ]
+
+partial merge:  [ 'lol', 'to' ]
+left list:  [ 'do' ]
+right list:  [ 'word', 'program' ]
+left list:  [ 'word' ]
+right list:  [ 'program' ]
+
+merging ... [ 'word' ] [ 'program' ]
+
+partial merge:  [ 'word', 'word' ]
+
+merging ... [ 'do' ] [ 'word', 'word' ]
+
+partial merge:  [ 'do', 'word', 'word' ]
+
+merging ... [ 'lol', 'to' ] [ 'do', 'word', 'word' ]
+
+partial merge:  [ 'lol', 'lol', 'to', 'word', 'word' ]
+
+merging ... [ 'apple', 'apple', 'programming', 'style', 'style' ] [ 'lol', 'lol', 'to', 'word', 'word' ]
+
+partial merge:  [
+  'apple',       'apple',
+  'programming', 'programming',
+  'programming', 'style',
+  'style',       'to',
+  'word',        'word'
+]
+
+merging ... [
+  'program', 'program',
+  'program', 'sure',
+  'to',      'use',
+  'use',     'use',
+  'use',     'use'
+] [
+  'apple',       'apple',
+  'programming', 'programming',
+  'programming', 'style',
+  'style',       'to',
+  'word',        'word'
+]
+
+partial merge:  [
+  'program', 'program', 'program',
+  'program', 'program', 'sure',
+  'sure',    'sure',    'sure',
+  'sure',    'sure',    'to',
+  'to',      'use',     'use',
+  'use',     'use',     'use',
+  'word',    'word'
+]
+
+merging ... [
+  'This',     'This',     'is',
+  'is',       'is',       'is',
+  'sim24ple', 'sim24ple', 'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'this',
+  'this',     'this'
+] [
+  'program', 'program', 'program',
+  'program', 'program', 'sure',
+  'sure',    'sure',    'sure',
+  'sure',    'sure',    'to',
+  'to',      'use',     'use',
+  'use',     'use',     'use',
+  'word',    'word'
+]
+
+partial merge:  [
+  'This',     'This',     'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'this',     'this',     'this',     'to',
+  'to',       'use',      'use',      'use',
+  'use',      'use',      'word',     'word'
+]
+left list:  [
+  'This',     'is',     'a',
+  'sim24ple', 'file',   'This',
+  'is',       'for',    'testing',
+  'a',        'simple', 'program',
+  'Test',     'this',   'file',
+  'only',     'file',   'apple',
+  'for',      'the'
+]
+right list:  [
+  'program',     'and',
+  'make',        'sure',
+  'to',          'use',
+  'only',        'this',
+  'functional',  'file',
+  'apple',       'CIS',
+  'programming', 'style',
+  'Program',     'lol',
+  'to',          'do',
+  'word',        'program'
+]
+left list:  [
+  'This',    'is',
+  'a',       'sim24ple',
+  'file',    'This',
+  'is',      'for',
+  'testing', 'a'
+]
+right list:  [
+  'simple', 'program',
+  'Test',   'this',
+  'file',   'only',
+  'file',   'apple',
+  'for',    'the'
+]
+left list:  [ 'This', 'is', 'a', 'sim24ple', 'file' ]
+right list:  [ 'This', 'is', 'for', 'testing', 'a' ]
+left list:  [ 'This', 'is' ]
+right list:  [ 'a', 'sim24ple', 'file' ]
+left list:  [ 'This' ]
+right list:  [ 'is' ]
+
+merging ... [ 'This' ] [ 'is' ]
+
+partial merge:  [ 'This', 'is' ]
+left list:  [ 'a' ]
+right list:  [ 'sim24ple', 'file' ]
+left list:  [ 'sim24ple' ]
+right list:  [ 'file' ]
+
+merging ... [ 'sim24ple' ] [ 'file' ]
+
+partial merge:  [ 'sim24ple', 'sim24ple' ]
+
+merging ... [ 'a' ] [ 'sim24ple', 'sim24ple' ]
+
+partial merge:  [ 'a', 'sim24ple', 'sim24ple' ]
+
+merging ... [ 'This', 'is' ] [ 'a', 'sim24ple', 'sim24ple' ]
+
+partial merge:  [ 'This', 'is', 'is', 'sim24ple', 'sim24ple' ]
+left list:  [ 'This', 'is' ]
+right list:  [ 'for', 'testing', 'a' ]
+left list:  [ 'This' ]
+right list:  [ 'is' ]
+
+merging ... [ 'This' ] [ 'is' ]
+
+partial merge:  [ 'This', 'is' ]
+left list:  [ 'for' ]
+right list:  [ 'testing', 'a' ]
+left list:  [ 'testing' ]
+right list:  [ 'a' ]
+
+merging ... [ 'testing' ] [ 'a' ]
+
+partial merge:  [ 'testing', 'testing' ]
+
+merging ... [ 'for' ] [ 'testing', 'testing' ]
+
+partial merge:  [ 'for', 'testing', 'testing' ]
+
+merging ... [ 'This', 'is' ] [ 'for', 'testing', 'testing' ]
+
+partial merge:  [ 'This', 'is', 'is', 'testing', 'testing' ]
+
+merging ... [ 'This', 'is', 'is', 'sim24ple', 'sim24ple' ] [ 'This', 'is', 'is', 'testing', 'testing' ]
+
+partial merge:  [
+  'This',     'This',
+  'is',       'is',
+  'is',       'is',
+  'sim24ple', 'sim24ple',
+  'testing',  'testing'
+]
+left list:  [ 'simple', 'program', 'Test', 'this', 'file' ]
+right list:  [ 'only', 'file', 'apple', 'for', 'the' ]
+left list:  [ 'simple', 'program' ]
+right list:  [ 'Test', 'this', 'file' ]
+left list:  [ 'simple' ]
+right list:  [ 'program' ]
+
+merging ... [ 'simple' ] [ 'program' ]
+
+partial merge:  [ 'simple', 'simple' ]
+left list:  [ 'Test' ]
+right list:  [ 'this', 'file' ]
+left list:  [ 'this' ]
+right list:  [ 'file' ]
+
+merging ... [ 'this' ] [ 'file' ]
+
+partial merge:  [ 'this', 'this' ]
+
+merging ... [ 'Test' ] [ 'this', 'this' ]
+
+partial merge:  [ 'Test', 'this', 'this' ]
+
+merging ... [ 'simple', 'simple' ] [ 'Test', 'this', 'this' ]
+
+partial merge:  [ 'simple', 'simple', 'simple', 'this', 'this' ]
+left list:  [ 'only', 'file' ]
+right list:  [ 'apple', 'for', 'the' ]
+left list:  [ 'only' ]
+right list:  [ 'file' ]
+
+merging ... [ 'only' ] [ 'file' ]
+
+partial merge:  [ 'only', 'only' ]
+left list:  [ 'apple' ]
+right list:  [ 'for', 'the' ]
+left list:  [ 'for' ]
+right list:  [ 'the' ]
+
+merging ... [ 'for' ] [ 'the' ]
+
+partial merge:  [ 'for', 'the' ]
+
+merging ... [ 'apple' ] [ 'for', 'the' ]
+
+partial merge:  [ 'apple', 'for', 'the' ]
+
+merging ... [ 'only', 'only' ] [ 'apple', 'for', 'the' ]
+
+partial merge:  [ 'only', 'only', 'only', 'only', 'the' ]
+
+merging ... [ 'simple', 'simple', 'simple', 'this', 'this' ] [ 'only', 'only', 'only', 'only', 'the' ]
+
+partial merge:  [
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'this',
+  'this',   'this'
+]
+
+merging ... [
+  'This',     'This',
+  'is',       'is',
+  'is',       'is',
+  'sim24ple', 'sim24ple',
+  'testing',  'testing'
+] [
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'simple',
+  'simple', 'this',
+  'this',   'this'
+]
+
+partial merge:  [
+  'This',     'This',     'is',
+  'is',       'is',       'is',
+  'sim24ple', 'sim24ple', 'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'this',
+  'this',     'this'
+]
+left list:  [
+  'program',    'and',
+  'make',       'sure',
+  'to',         'use',
+  'only',       'this',
+  'functional', 'file'
+]
+right list:  [
+  'apple',       'CIS',
+  'programming', 'style',
+  'Program',     'lol',
+  'to',          'do',
+  'word',        'program'
+]
+left list:  [ 'program', 'and', 'make', 'sure', 'to' ]
+right list:  [ 'use', 'only', 'this', 'functional', 'file' ]
+left list:  [ 'program', 'and' ]
+right list:  [ 'make', 'sure', 'to' ]
+left list:  [ 'program' ]
+right list:  [ 'and' ]
+
+merging ... [ 'program' ] [ 'and' ]
+
+partial merge:  [ 'program', 'program' ]
+left list:  [ 'make' ]
+right list:  [ 'sure', 'to' ]
+left list:  [ 'sure' ]
+right list:  [ 'to' ]
+
+merging ... [ 'sure' ] [ 'to' ]
+
+partial merge:  [ 'sure', 'to' ]
+
+merging ... [ 'make' ] [ 'sure', 'to' ]
+
+partial merge:  [ 'make', 'sure', 'to' ]
+
+merging ... [ 'program', 'program' ] [ 'make', 'sure', 'to' ]
+
+partial merge:  [ 'program', 'program', 'program', 'sure', 'to' ]
+left list:  [ 'use', 'only' ]
+right list:  [ 'this', 'functional', 'file' ]
+left list:  [ 'use' ]
+right list:  [ 'only' ]
+
+merging ... [ 'use' ] [ 'only' ]
+
+partial merge:  [ 'use', 'use' ]
+left list:  [ 'this' ]
+right list:  [ 'functional', 'file' ]
+left list:  [ 'functional' ]
+right list:  [ 'file' ]
+
+merging ... [ 'functional' ] [ 'file' ]
+
+partial merge:  [ 'functional', 'functional' ]
+
+merging ... [ 'this' ] [ 'functional', 'functional' ]
+
+partial merge:  [ 'this', 'this', 'this' ]
+
+merging ... [ 'use', 'use' ] [ 'this', 'this', 'this' ]
+
+partial merge:  [ 'use', 'use', 'use', 'use', 'use' ]
+
+merging ... [ 'program', 'program', 'program', 'sure', 'to' ] [ 'use', 'use', 'use', 'use', 'use' ]
+
+partial merge:  [
+  'program', 'program',
+  'program', 'sure',
+  'to',      'use',
+  'use',     'use',
+  'use',     'use'
+]
+left list:  [ 'apple', 'CIS', 'programming', 'style', 'Program' ]
+right list:  [ 'lol', 'to', 'do', 'word', 'program' ]
+left list:  [ 'apple', 'CIS' ]
+right list:  [ 'programming', 'style', 'Program' ]
+left list:  [ 'apple' ]
+right list:  [ 'CIS' ]
+
+merging ... [ 'apple' ] [ 'CIS' ]
+
+partial merge:  [ 'apple', 'apple' ]
+left list:  [ 'programming' ]
+right list:  [ 'style', 'Program' ]
+left list:  [ 'style' ]
+right list:  [ 'Program' ]
+
+merging ... [ 'style' ] [ 'Program' ]
+
+partial merge:  [ 'style', 'style' ]
+
+merging ... [ 'programming' ] [ 'style', 'style' ]
+
+partial merge:  [ 'programming', 'style', 'style' ]
+
+merging ... [ 'apple', 'apple' ] [ 'programming', 'style', 'style' ]
+
+partial merge:  [ 'apple', 'apple', 'programming', 'style', 'style' ]
+left list:  [ 'lol', 'to' ]
+right list:  [ 'do', 'word', 'program' ]
+left list:  [ 'lol' ]
+right list:  [ 'to' ]
+
+merging ... [ 'lol' ] [ 'to' ]
+
+partial merge:  [ 'lol', 'to' ]
+left list:  [ 'do' ]
+right list:  [ 'word', 'program' ]
+left list:  [ 'word' ]
+right list:  [ 'program' ]
+
+merging ... [ 'word' ] [ 'program' ]
+
+partial merge:  [ 'word', 'word' ]
+
+merging ... [ 'do' ] [ 'word', 'word' ]
+
+partial merge:  [ 'do', 'word', 'word' ]
+
+merging ... [ 'lol', 'to' ] [ 'do', 'word', 'word' ]
+
+partial merge:  [ 'lol', 'lol', 'to', 'word', 'word' ]
+
+merging ... [ 'apple', 'apple', 'programming', 'style', 'style' ] [ 'lol', 'lol', 'to', 'word', 'word' ]
+
+partial merge:  [
+  'apple',       'apple',
+  'programming', 'programming',
+  'programming', 'style',
+  'style',       'to',
+  'word',        'word'
+]
+
+merging ... [
+  'program', 'program',
+  'program', 'sure',
+  'to',      'use',
+  'use',     'use',
+  'use',     'use'
+] [
+  'apple',       'apple',
+  'programming', 'programming',
+  'programming', 'style',
+  'style',       'to',
+  'word',        'word'
+]
+
+partial merge:  [
+  'program', 'program', 'program',
+  'program', 'program', 'sure',
+  'sure',    'sure',    'sure',
+  'sure',    'sure',    'to',
+  'to',      'use',     'use',
+  'use',     'use',     'use',
+  'word',    'word'
+]
+
+merging ... [
+  'This',     'This',     'is',
+  'is',       'is',       'is',
+  'sim24ple', 'sim24ple', 'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',
+  'testing',  'testing',  'this',
+  'this',     'this'
+] [
+  'program', 'program', 'program',
+  'program', 'program', 'sure',
+  'sure',    'sure',    'sure',
+  'sure',    'sure',    'to',
+  'to',      'use',     'use',
+  'use',     'use',     'use',
+  'word',    'word'
+]
+
+partial merge:  [
+  'This',     'This',     'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'this',     'this',     'this',     'to',
+  'to',       'use',      'use',      'use',
+  'use',      'use',      'word',     'word'
+]
+
+merging ... [
+  'This',     'This',     'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'this',     'this',     'this',     'to',
+  'to',       'use',      'use',      'use',
+  'use',      'use',      'word',     'word'
+] [
+  'This',     'This',     'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',
+  'this',     'this',     'this',     'to',
+  'to',       'use',      'use',      'use',
+  'use',      'use',      'word',     'word'
+]
+
+partial merge:  [
+  'This',     'This',     'This',     'This',     'is',
+  'is',       'is',       'is',       'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'this',     'this',     'this',     'this',
+  'this',     'this',     'to',       'to',       'to',
+  'to',       'use',      'use',      'use',      'use',
+  'use',      'use',      'use',      'use',      'use',
+  'use',      'word',     'word',     'word',     'word'
+]
+full list:  [
+  'This',    'is',      'a',           'sim24ple',   'file',
+  'This',    'is',      'for',         'testing',    'a',
+  'simple',  'program', 'Test',        'this',       'file',
+  'only',    'file',    'apple',       'for',        'the',
+  'program', 'and',     'make',        'sure',       'to',
+  'use',     'only',    'this',        'functional', 'file',
+  'apple',   'CIS',     'programming', 'style',      'Program',
+  'lol',     'to',      'do',          'word',       'program',
+  'This',    'is',      'a',           'sim24ple',   'file',
+  'This',    'is',      'for',         'testing',    'a',
+  'simple',  'program', 'Test',        'this',       'file',
+  'only',    'file',    'apple',       'for',        'the',
+  'program', 'and',     'make',        'sure',       'to',
+  'use',     'only',    'this',        'functional', 'file',
+  'apple',   'CIS',     'programming', 'style',      'Program',
+  'lol',     'to',      'do',          'word',       'program'
+]
+full list length:  80
+Merge Sorted :  [
+  'This',     'This',     'This',     'This',     'is',
+  'is',       'is',       'is',       'is',       'is',
+  'is',       'is',       'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple', 'sim24ple',
+  'sim24ple', 'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'testing',  'testing',  'testing',  'testing',
+  'testing',  'this',     'this',     'this',     'this',
+  'this',     'this',     'to',       'to',       'to',
+  'to',       'use',      'use',      'use',      'use',
+  'use',      'use',      'use',      'use',      'use',
+  'use',      'word',     'word',     'word',     'word'
+]
+Merge Sorted Length :  80
+Sorted by JS:  [
+  'CIS',         'CIS',      'Program',  'Program', 'Test',
+  'Test',        'This',     'This',     'This',    'This',
+  'a',           'a',        'a',        'a',       'and',
+  'and',         'apple',    'apple',    'apple',   'apple',
+  'do',          'do',       'file',     'file',    'file',
+  'file',        'file',     'file',     'file',    'file',
+  'for',         'for',      'for',      'for',     'functional',
+  'functional',  'is',       'is',       'is',      'is',
+  'lol',         'lol',      'make',     'make',    'only',
+  'only',        'only',     'only',     'program', 'program',
+  'program',     'program',  'program',  'program', 'programming',
+  'programming', 'sim24ple', 'sim24ple', 'simple',  'simple',
+  'style',       'style',    'sure',     'sure',    'testing',
+  'testing',     'the',      'the',      'this',    'this',
+  'this',        'this',     'to',       'to',      'to',
+  'to',          'use',      'use',      'word',    'word'
+]
+Difference ? :  [
+  'CIS',     'CIS',     'Program',     'Program',
+  'Test',    'Test',    'a',           'a',
+  'a',       'a',       'and',         'and',
+  'apple',   'apple',   'apple',       'apple',
+  'do',      'do',      'file',        'file',
+  'file',    'file',    'file',        'file',
+  'file',    'file',    'for',         'for',
+  'for',     'for',     'functional',  'functional',
+  'lol',     'lol',     'make',        'make',
+  'only',    'only',    'only',        'only',
+  'program', 'program', 'program',     'program',
+  'program', 'program', 'programming', 'programming',
+  'simple',  'simple',  'style',       'style',
+  'sure',    'sure',    'the',         'the'
+] 
+
+Same ? :  false 
+
