@@ -1,7 +1,7 @@
 const fs = require("fs");
 
-const { merge_sort } = require("./sort");
-const { start_reducing_list } = require("./reduce");
+const { merge_sort, start_row_bubble_sort } = require("./sort");
+const { start_reducing_list, reduce_list } = require("./reduce");
 function search_list(list_to_search, list_index, k_frequent_words) {}
 
 function main() {
@@ -45,22 +45,36 @@ function main() {
     console.log("Reduced List", reduced_list);
     console.log("Reduced List total worlds", total_words_reduced);
 
-    let total = 0;
-    let array_of_words_reduced = [];
-    for (let i = 0; i < sorted_merged_list.length; i++) {
-      total++;
-      if (sorted_merged_list[i] != sorted_merged_list[i + 1]) {
-        array_of_words_reduced.push([total, sorted_merged_list[i]]);
-        total = 0;
-      }
-    }
-    let total_words = 0;
-    for (let index = 0; index < array_of_words_reduced.length; index++) {
-      total_words += array_of_words_reduced[index][0];
-    }
+    let length = reduced_list.length;
+    let sorted_reduced_list = start_row_bubble_sort(
+      reduced_list,
+      0,
+      1,
+      reduced_list.length
+    );
+    console.log("Sorted Reduced List: ", sorted_reduced_list);
 
-    console.log("JS reduced list : ", array_of_words_reduced);
-    console.log("Total Words JS reduce list : ", total_words);
+    /* get K least frequent words */
+    let k_least_frequent = sorted_reduced_list.slice(0, k_frequent_words);
+    console.log("K =" , k_frequent_words ," => least frequent words: ", 
+    k_least_frequent);
+
+    // let total = 0;
+    // let array_of_words_reduced = [];
+    // for (let i = 0; i < sorted_merged_list.length; i++) {
+    //   total++;
+    //   if (sorted_merged_list[i] != sorted_merged_list[i + 1]) {
+    //     array_of_words_reduced.push([total, sorted_merged_list[i]]);
+    //     total = 0;
+    //   }
+    // }
+    // let total_words = 0;
+    // for (let index = 0; index < array_of_words_reduced.length; index++) {
+    //   total_words += array_of_words_reduced[index][0];
+    // }
+
+    // console.log("JS reduced list : ", array_of_words_reduced);
+    // console.log("Total Words JS reduce list : ", total_words);
 
     /* recursively search for k frequent most frequent words  */
     search_list(parsed_list, 0, k_frequent_words);

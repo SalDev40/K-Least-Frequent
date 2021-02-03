@@ -1,6 +1,6 @@
 /* 
   ** maximum stack size is reached for approx. 4000+ words
-  ** algorithm used for sorting reduced list with frequencies
+  ** algorithm NOT used for submission
   ** time = O(n2)
 
   - BUBBLESORT:
@@ -29,6 +29,8 @@ exports.start_row_bubble_sort = (
   index_to_compare_to,
   stop_index
 ) => {
+  // console.log("\nnew stop index: ", stop_index);
+
   /* start sorting list one round at a time
      each next round stops one before previous
   */
@@ -38,6 +40,7 @@ exports.start_row_bubble_sort = (
     index_to_compare_to,
     stop_index
   );
+  // console.log("sorted partial: ", sorted_bubble_list);
   /* if sorted list round is the final round then we are done */
   if (next_index_to_stop_at == 0) {
     return sorted_bubble_list.concat([]);
@@ -68,9 +71,21 @@ exports.row_bubble_sort = (
     let next_index_to_compare_to = index_to_compare_to + 1;
 
     /* perform swap if current value is greater the next value */
+    // console.log(
+    //   "ch: ",
+    //   list_to_sort[index_to_check],
+    //   " com: ",
+    //   list_to_sort[index_to_compare_to]
+    // );
     if (
       list_to_sort[index_to_check][0] > list_to_sort[index_to_compare_to][0]
     ) {
+      // console.log(
+      //   "swapping: ",
+      //   list_to_sort[index_to_check],
+      //   " <-> ",
+      //   list_to_sort[index_to_compare_to]
+      // );
       let word_to_swap_forward = list_to_sort[index_to_check];
       let word_to_swap_backward = list_to_sort[index_to_compare_to];
 
@@ -86,12 +101,17 @@ exports.row_bubble_sort = (
         list_to_sort.length
       );
 
+      // console.log("list before: ", list_before_index_to_swap_forward);
+      // console.log("list after: ", list_after_index_to_swap_backward);
+      // console.log("word to swap back: ", [word_to_swap_backward])
+
       /* concat all arrays and "swapped" words to create new intitial swapped list */
       let new_list_one_swap = list_before_index_to_swap_forward
         .concat([word_to_swap_backward])
         .concat([word_to_swap_forward])
         .concat(list_after_index_to_swap_backward);
 
+      // console.log("nn: ", new_list_one_swap);
       /* use new "swapped" list and check next two elements */
       return this.row_bubble_sort(
         new_list_one_swap,
@@ -113,7 +133,7 @@ exports.row_bubble_sort = (
 
 /* 
   ** time = O(nlogn)
-  ** algorithm used for sorting input list of all words
+  ** algorithm used for submission
 
   - MERGE SORT:
     - breaks down each new list until its down to one size
@@ -148,6 +168,8 @@ exports.merge_sort = (list_to_sort) => {
     /* recursively break down left and right list to one element */
     let split_left_list = this.merge_sort(left_list);
     let split_right_list = this.merge_sort(right_list);
+    // console.log(split_left_list);
+    // console.log(split_right_list);
     /* merge left and right lists */
     let partial_merged = this.merge([], split_left_list, split_right_list);
     // console.log(partial_merged);
