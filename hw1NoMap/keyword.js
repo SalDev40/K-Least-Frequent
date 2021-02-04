@@ -1,8 +1,7 @@
 const fs = require("fs");
 
 const { merge_sort, start_row_bubble_sort } = require("./sort");
-const { start_reducing_list, reduce_list } = require("./reduce");
-function search_list(list_to_search, list_index, k_frequent_words) {}
+const { start_reducing_list } = require("./reduce");
 
 function main() {
   try {
@@ -16,7 +15,7 @@ function main() {
     let parsed_list = parse_input_file(test_case);
     let parsed_list_3 = parse_input_file(test_case);
 
-    /* recursively sort list */
+    /* recursively sort inpit list */
     let sorted_merged_list = merge_sort(parsed_list_3);
 
     console.log("full list: ", parsed_list);
@@ -33,8 +32,7 @@ function main() {
     console.log("Difference = : ", check);
     console.log("Same ? ", check.length == 0, "\n");
 
-    /* break merged into smaller lists to reduce */
-
+    /* reduce sorted list to get frequencies of each word */
     let reduced_list = start_reducing_list(sorted_merged_list);
 
     let total_words_reduced = 0;
@@ -43,9 +41,8 @@ function main() {
     }
 
     console.log("Reduced List", reduced_list);
-    console.log("Reduced List total worlds", total_words_reduced);
 
-    let length = reduced_list.length;
+    /* sort reduced list from lowest frequency to highest  */
     let sorted_reduced_list = start_row_bubble_sort(
       reduced_list,
       0,
@@ -53,31 +50,36 @@ function main() {
       reduced_list.length
     );
     console.log("Sorted Reduced List: ", sorted_reduced_list);
+    console.log("Reduced List total worlds", total_words_reduced);
 
-    /* get K least frequent words */
+    let total = 0;
+    let array_of_words_reduced = [];
+    for (let i = 0; i < sorted_merged_list.length; i++) {
+      total++;
+      if (sorted_merged_list[i] != sorted_merged_list[i + 1]) {
+        array_of_words_reduced.push([total, sorted_merged_list[i]]);
+        total = 0;
+      }
+    }
+    let total_words = 0;
+    for (let index = 0; index < array_of_words_reduced.length; index++) {
+      total_words += array_of_words_reduced[index][0];
+    }
+
+    console.log("Sorted JS reduced list : ", array_of_words_reduced.sort());
+    console.log("Total Words JS reduce list : ", total_words);
+
+    /* get K least frequent words  from sorted reduce list */
     let k_least_frequent = sorted_reduced_list.slice(0, k_frequent_words);
-    console.log("K =" , k_frequent_words ," => least frequent words: ", 
-    k_least_frequent);
+    console.log(
+      "K =",
+      k_frequent_words,
+      " => least frequent words: ",
+      k_least_frequent
+    );
 
-    // let total = 0;
-    // let array_of_words_reduced = [];
-    // for (let i = 0; i < sorted_merged_list.length; i++) {
-    //   total++;
-    //   if (sorted_merged_list[i] != sorted_merged_list[i + 1]) {
-    //     array_of_words_reduced.push([total, sorted_merged_list[i]]);
-    //     total = 0;
-    //   }
-    // }
-    // let total_words = 0;
-    // for (let index = 0; index < array_of_words_reduced.length; index++) {
-    //   total_words += array_of_words_reduced[index][0];
-    // }
-
-    // console.log("JS reduced list : ", array_of_words_reduced);
-    // console.log("Total Words JS reduce list : ", total_words);
-
-    /* recursively search for k frequent most frequent words  */
-    search_list(parsed_list, 0, k_frequent_words);
+    /* write to output file */
+    fs.writeFileSync(output_file, k_least_frequent); 
   } catch (err) {
     console.error(err);
   }
